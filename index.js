@@ -78,11 +78,11 @@ function cashRegister (price, cash, cid){
                 due.push([cashName, cashRtrn * cashValue])
             }
         }
-       
+         
 
     }
     if(amtDue > 0){
            return {status: "INSUFFICIENT_FUNDS", change: []};
     } 
-    return {status: "OPEN", change: due}  
+    return {status: "OPEN", change: due}
 }
