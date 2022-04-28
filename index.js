@@ -13,6 +13,8 @@ function cashRegister (price, cash, cid){
 //         ["TWENTY", 60],
 //         ["ONE HUNDRED", 100]
 //       ]
+    // We are going to reverse the array
+    cid = cid.reverse();
     // Flatten the array
     cid = cid.flat();
     // we will create a new empty object
@@ -56,26 +58,28 @@ function cashRegister (price, cash, cid){
     totalCID = totalCID.toFixed(2);
     // now we are going to create a variable amtDue variable that let's us know the change we need to give
     let amtDue = cash - price;
+    
     // first we are going to check if they gave us cash to cover the price
     if (cash < price){
         // then we are going to return an object that says status is insufficient funds
         return {status: "INCORRECT_PAYMENT", change: []}
     }
-    else {
-        continue;
-    }
-    // now we are going to check to see if the cash is equal to the total we have in the register
-    if (cash === totalCID){
+   if (cash > price) {
+        // now we are going to check to see if the cash is equal to the total we have in the register
+        if (cash === totalCID){
         // if it is then we are going to return an object that says status is closed
-        return {status: "CLOSED", change: []};
-    }
+            return {status: "CLOSED", change: []};
+        }
     // now we are going to check if cash is less than the totalCID
-    if (cash < totalCID){
+        if (cash < totalCID){
         // then we are going to loop through the object to give them their change
         // we actually we need to loop backwards so we can have go through the big bills first and then the change
-        for(let key in obj){
+            for(let key in obj){
             // while amount due is greater than  
 
+            }
         }
+
     }
+
 }
